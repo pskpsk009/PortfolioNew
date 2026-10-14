@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Paing Soe Khant · Software Engineering Student</title>
+    <meta
+      name="description"
+      content="Portfolio of Paing Soe Khant, Software Engineering student at Mae Fah Luang University building full-stack web and mobile apps."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ============ HEADER ============ -->
+    <header class="topbar">
+      <a href="#top" class="logo">
+        <span class="logo-box">PSK</span>
+        <span class="logo-meta">DWG NO. PSK-2027<br />REV 1.0</span>
+      </a>
+      <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav">
+        <a href="#about">01 About</a>
+        <a href="#skills">02 Skills</a>
+        <a href="#projects">03 Projects</a>
+        <a href="#education">04 Education</a>
+        <a href="#contact">05 Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <!-- ============ HERO ============ -->
+      <section class="hero sheet">
+        <span class="reg tl"></span><span class="reg tr"></span
+        ><span class="reg bl"></span><span class="reg br"></span>
+        <div class="hero-text">
+          <p class="sheet-label">SHEET 00 · GENERAL ARRANGEMENT</p>
+          <h1>PAING<br />SOE KHANT</h1>
+          <p class="role">
+            Software Engineer <span class="muted">(in progress)</span>
+          </p>
+          <div class="dim"><span>FULL-STACK · WEB + MOBILE</span></div>
+          <p class="lead">
+            Software Engineering student at Mae Fah Luang University who builds
+            full-stack web and mobile apps with React, React Native, TypeScript,
+            Supabase and Firebase. Most recently I built an AI calorie tracker
+            using Google Gemini and PostgreSQL.
+          </p>
+          <div class="actions">
+            <a href="#projects" class="btn btn-solid">View Projects →</a>
+            <a href="PaingSoeKhantResume.pdf" class="btn" download
+              >Download Resume</a
+            >
+          </div>
+        </div>
+
+        <!-- System diagram -->
+        <figure class="hero-fig" aria-label="System architecture sketch">
+          <svg viewBox="0 0 360 300" class="schematic">
+            <defs>
+              <marker
+                id="arrow"
+                viewBox="0 0 10 10"
+                refX="9"
+                refY="5"
+                markerWidth="7"
+                markerHeight="7"
+                orient="auto-start-reverse"
+              >
+                <path d="M0,0 L10,5 L0,10 z" fill="currentColor" />
+              </marker>
+            </defs>
+            <!-- client -->
+            <rect x="20" y="30" width="110" height="60" class="draw" />
+            <text x="75" y="57" class="t-main">CLIENT</text>
+            <text x="75" y="74" class="t-sub">React / React Native</text>
+            <!-- api -->
+            <rect x="230" y="30" width="110" height="60" class="draw" />
+            <text x="285" y="57" class="t-main">API</text>
+            <text x="285" y="74" class="t-sub">Express / Edge Fn</text>
+            <!-- db -->
+            <ellipse cx="285" cy="200" rx="55" ry="14" class="draw" />
+            <path d="M230 200 V250 A55 14 0 0 0 340 250 V200" class="draw" />
+            <text x="285" y="235" class="t-main">DATABASE</text>
+            <text x="285" y="252" class="t-sub">Supabase Postgres</text>
+            <!-- ai -->
+            <rect x="135" y="180" width="70" height="44" class="draw" />
+            <text x="170" y="200" class="t-main">AI</text>
+            <text x="170" y="215" class="t-sub">Gemini</text>
+            <!-- user -->
+            <circle cx="60" cy="200" r="16" class="draw" />
+            <path d="M30 260 Q60 220 90 260" class="draw" />
+            <text x="60" y="282" class="t-sub">USER</text>
+            <!-- links -->
+            <line
+              x1="130"
+              y1="52"
+              x2="228"
+              y2="52"
+              class="link"
+              marker-end="url(#arrow)"
+            />
+            <line
+              x1="228"
+              y1="70"
+              x2="132"
+              y2="70"
+              class="link dashed"
+              marker-end="url(#arrow)"
+            />
+            <line
+              x1="300"
+              y1="90"
+              x2="300"
+              y2="184"
+              class="link"
+              marker-end="url(#arrow)"
+            />
+            <line
+              x1="255"
+              y1="90"
+              x2="207"
+              y2="182"
+              class="link dashed"
+              marker-end="url(#arrow)"
+            />
+            <line
+              x1="60"
+              y1="182"
+              x2="60"
+              y2="92"
+              class="link"
+              marker-end="url(#arrow)"
+            />
+            <text x="180" y="45" class="t-note">REQUEST</text>
+            <text x="180" y="84" class="t-note">JSON</text>
+            <!-- dimension -->
+            <line
+              x1="20"
+              y1="14"
+              x2="340"
+              y2="14"
+              class="dimline"
+              marker-start="url(#arrow)"
+              marker-end="url(#arrow)"
+            />
+            <text x="180" y="10" class="t-note">FULL STACK</text>
+          </svg>
+          <figcaption>FIG. 1 · Typical system I build</figcaption>
+        </figure>
+      </section>
+
+      <!-- ============ ABOUT ============ -->
+      <section id="about" class="sheet reveal">
+        <header class="sheet-head">
+          <p class="sheet-label">SHEET 01</p>
+          <h2>Specifications</h2>
+        </header>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              I'm Paing Soe Khant, a Software Engineering student at
+              <b>Mae Fah Luang University</b> in Chiang Rai, Thailand. I build
+              full-stack web and mobile apps, from the database schema and
+              security rules to the API and the screens people use.
+            </p>
+            <p>
+              I'm looking for a <b>software engineering internship</b> where I
+              can contribute to a product team and keep growing as an engineer.
+              I'm available for a full-time, credit-bearing co-op from
+              <b>January 2027</b> for 4+ months.
+            </p>
+          </div>
+          <table class="spec">
+            <tbody>
+              <tr>
+                <th>NAME</th>
+                <td>Paing Soe Khant</td>
+              </tr>
+              <tr>
+                <th>PROGRAM</th>
+                <td>B.Eng. Software Engineering</td>
+              </tr>
+              <tr>
+                <th>INSTITUTION</th>
+                <td>Mae Fah Luang University</td>
+              </tr>
+              <tr>
+                <th>GRADUATION</th>
+                <td>Expected 2027</td>
+              </tr>
+              <tr>
+                <th>LOCATION</th>
+                <td>Chiang Rai, Thailand</td>
+              </tr>
+              <tr>
+                <th>ENGLISH</th>
+                <td>IELTS 7.0</td>
+              </tr>
+              <tr>
+                <th>STATUS</th>
+                <td>
+                  <span class="status-dot"></span>Open to co-op from Jan 2027
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============ SKILLS ============ -->
+      <section id="skills" class="sheet reveal">
+        <header class="sheet-head">
+          <p class="sheet-label">SHEET 02</p>
+          <h2>Technical skills</h2>
+        </header>
+        <div class="table-wrap">
+          <table class="bom">
+            <thead>
+              <tr>
+                <th>ITEM</th>
+                <th>CATEGORY</th>
+                <th>COMPONENTS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>01</td>
+                <td>Languages</td>
+                <td>
+                  <ul class="tags">
+                    <li>TypeScript</li>
+                    <li>JavaScript</li>
+                    <li>SQL</li>
+                    <li>Python</li>
+                    <li>C#</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>02</td>
+                <td>Frontend &amp; Mobile</td>
+                <td>
+                  <ul class="tags">
+                    <li>React</li>
+                    <li>React Native</li>
+                    <li>Expo</li>
+                    <li>Expo Router</li>
+                    <li>Reanimated</li>
+                    <li>Vite</li>
+                    <li>TanStack Start</li>
+                    <li>Chart.js</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>03</td>
+                <td>Backend &amp; Data</td>
+                <td>
+                  <ul class="tags">
+                    <li>Node.js</li>
+                    <li>Express.js</li>
+                    <li>REST APIs</li>
+                    <li>
+                      Supabase (PostgreSQL, Auth, Storage, Edge Functions)
+                    </li>
+                    <li>Firebase</li>
+                    <li>Google Gemini API</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>04</td>
+                <td>Testing &amp; Tools</td>
+                <td>
+                  <ul class="tags">
+                    <li>Jest</li>
+                    <li>Cypress</li>
+                    <li>Git</li>
+                    <li>GitHub</li>
+                    <li>VS Code</li>
+                    <li>npm</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============ PROJECTS ============ -->
+      <section id="projects" class="sheet reveal">
+        <header class="sheet-head">
+          <p class="sheet-label">SHEET 03</p>
+          <h2>Top 3 projects</h2>
+        </header>
+        <div class="parts">
+          <article class="part" data-ref="PART A-01">
+            <svg viewBox="0 0 120 70" class="part-fig">
+              <rect x="10" y="8" width="30" height="54" rx="4" class="draw" />
+              <circle cx="25" cy="30" r="8" class="draw" />
+              <line x1="40" y1="30" x2="62" y2="30" class="link" />
+              <rect x="64" y="18" width="46" height="24" class="draw" />
+              <text x="87" y="33" class="t-sub">GEMINI</text>
+              <line x1="87" y1="42" x2="87" y2="54" class="link" />
+              <text x="87" y="64" class="t-note">kcal · macros</text>
+            </svg>
+            <h3>AI Calorie Tracker</h3>
+            <p>
+              Mobile app that turns a meal photo into per-item calories and
+              macros using Google Gemini vision.
+            </p>
+            <ul class="points">
+              <li>
+                Gemini called through a Supabase Edge Function with auth checks,
+                retries and fallback; AI output validated before saving
+              </li>
+              <li>
+                PostgreSQL schema with row-level security on every table,
+                private image storage via signed URLs, and a trigger that logs
+                weight history
+              </li>
+              <li>
+                Weekly dashboard for nutrition, walking, BMI and weight, with
+                per-user time zones (including daylight saving)
+              </li>
+              <li>
+                Email sign-in with deep-link confirmation and password reset
+              </li>
+            </ul>
+            <ul class="tags">
+              <li>React Native</li>
+              <li>Expo</li>
+              <li>TypeScript</li>
+              <li>Supabase</li>
+              <li>PostgreSQL</li>
+              <li>Gemini API</li>
+              <li>Jest</li>
+            </ul>
+            <div class="part-links">
+              <a
+                href="https://github.com/pskpsk009/AiCalorieTracker"
+                target="_blank"
+                rel="noopener"
+                >GitHub ↗</a
+              >
+            </div>
+          </article>
+
+          <article class="part" data-ref="PART A-02">
+            <svg viewBox="0 0 120 70" class="part-fig">
+              <circle cx="30" cy="35" r="20" class="draw" />
+              <circle cx="30" cy="35" r="11" class="link" fill="none" />
+              <polyline
+                points="62,58 72,40 84,46 96,22 110,28"
+                class="link"
+                fill="none"
+              />
+              <circle cx="62" cy="58" r="2.5" class="draw" />
+              <circle cx="110" cy="28" r="2.5" class="draw" />
+            </svg>
+            <h3>BetterDays</h3>
+            <p>
+              Five-tab student well-being app with 39 guided activities. I led
+              development from a written requirements backlog and design
+              documents.
+            </p>
+            <ul class="points">
+              <li>
+                Trail tracker that maps walks with GPS outdoors or motion
+                sensors indoors, and shares trail images to a public gallery
+              </li>
+              <li>
+                Content-driven architecture: activities are configuration
+                rendered by reusable templates, so most new activities need no
+                new screen code
+              </li>
+              <li>
+                Reanimated exercises such as a Breathing Bubble synced to
+                breathing phases and auto-advancing Daily Stretch routines
+              </li>
+            </ul>
+            <ul class="tags">
+              <li>React Native</li>
+              <li>Expo</li>
+              <li>TypeScript</li>
+              <li>Supabase</li>
+              <li>Reanimated</li>
+            </ul>
+            <div class="part-links">
+              <a
+                href="https://github.com/pskpsk009/BetterDays"
+                target="_blank"
+                rel="noopener"
+                >GitHub ↗</a
+              >
+            </div>
+          </article>
+
+          <article class="part" data-ref="PART A-03">
+            <svg viewBox="0 0 120 70" class="part-fig">
+              <rect x="6" y="24" width="28" height="20" class="draw" />
+              <text x="20" y="37" class="t-note">DRAFT</text>
+              <line x1="34" y1="34" x2="44" y2="34" class="link" />
+              <rect x="44" y="24" width="32" height="20" class="draw" />
+              <text x="60" y="37" class="t-note">REVIEW</text>
+              <line x1="76" y1="30" x2="86" y2="16" class="link" />
+              <line x1="76" y1="38" x2="86" y2="52" class="link" />
+              <rect x="86" y="6" width="30" height="18" class="draw" />
+              <text x="101" y="18" class="t-note">OK</text>
+              <rect x="86" y="44" width="30" height="18" class="draw" />
+              <text x="101" y="56" class="t-note">REJECT</text>
+            </svg>
+            <h3>SE Project Hub</h3>
+            <p>
+              Full-stack platform for capstone and competition project
+              submissions, advisor reviews and rubric-based grading.
+            </p>
+            <ul class="points">
+              <li>
+                Draft → under review → approved/rejected workflow, with
+                role-based dashboards for students, advisors and coordinators
+              </li>
+              <li>
+                TypeScript Express.js REST API with Zod validation, Helmet and
+                rate limiting, secured by Firebase Auth with role-based custom
+                claims
+              </li>
+              <li>
+                Relational Supabase Postgres schema for projects, team members,
+                files, comments and multi-level rubrics
+              </li>
+            </ul>
+            <ul class="tags">
+              <li>React</li>
+              <li>TypeScript</li>
+              <li>Express.js</li>
+              <li>Firebase</li>
+              <li>Supabase</li>
+              <li>Tailwind CSS</li>
+            </ul>
+            <div class="part-links">
+              <a
+                href="https://github.com/SuYeeMonThein/TheFinalSEhub"
+                target="_blank"
+                rel="noopener"
+                >GitHub ↗</a
+              >
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ EDUCATION ============ -->
+      <section id="education" class="sheet reveal">
+        <header class="sheet-head">
+          <p class="sheet-label">SHEET 04</p>
+          <h2>Education History</h2>
+        </header>
+        <div class="table-wrap">
+          <table class="rev">
+            <thead>
+              <tr>
+                <th>REV</th>
+                <th>DATE</th>
+                <th>DESCRIPTION</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2.0</td>
+                <td>Jan 2027 →</td>
+                <td>
+                  <b>Available for co-op</b><br /><span class="muted"
+                    >Full-time, credit-bearing, 4+ months</span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>1.1</td>
+                <td>2027 (exp.)</td>
+                <td>
+                  <b>Bachelor of Engineering in Software Engineering</b
+                  ><br /><span class="muted"
+                    >Mae Fah Luang University · Chiang Rai, Thailand</span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>1.0</td>
+                <td>—</td>
+                <td>
+                  <b>IELTS 7.0</b><br /><span class="muted"
+                    >English proficiency</span
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============ CONTACT ============ -->
+      <section id="contact" class="sheet reveal">
+        <header class="sheet-head">
+          <p class="sheet-label">SHEET 05</p>
+          <h2>Contact</h2>
+        </header>
+        <div class="contact-grid">
+          <div>
+            <p class="lead">
+              Have an internship, co-op or project in mind? Send me a message
+              and I'll get back to you.
+            </p>
+            <ul class="contact-list">
+              <li>
+                <span>EMAIL</span
+                ><a href="mailto:6631503082@lamduan.mfu.ac.th"
+                  >6631503082@lamduan.mfu.ac.th</a
+                >
+              </li>
+              <li>
+                <span>GITHUB</span
+                ><a
+                  href="https://github.com/pskpsk009"
+                  target="_blank"
+                  rel="noopener"
+                  >github.com/pskpsk009</a
+                >
+              </li>
+              <li><span>LOCATION</span>Chiang Rai, Thailand</li>
+            </ul>
+          </div>
+          <form class="contact-form" id="contactForm">
+            <label>NAME<input name="name" required /></label>
+            <label>EMAIL<input name="email" type="email" required /></label>
+            <label
+              >MESSAGE<textarea name="message" rows="4" required></textarea>
+            </label>
+            <button class="btn btn-solid" type="submit">Transmit →</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ TITLE BLOCK FOOTER ============ -->
+    <footer class="title-block">
+      <div><span>PROJECT</span>Personal Portfolio</div>
+      <div><span>DRAWN BY</span>Paing Soe Khant</div>
+      <div><span>DATE</span><time id="year"></time></div>
+      <div><span>SCALE</span>1:1</div>
+      <div><span>SHEET</span>05 OF 05</div>
+    </footer>
+
+    <div class="coords" aria-hidden="true">
+      X <span id="cx">000</span> · Y <span id="cy">000</span>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
