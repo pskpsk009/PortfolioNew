@@ -142,7 +142,30 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 16px; }
 @keyframes fade { to { opacity: 1; } }
 
 /* ============ ABOUT ============ */
-.about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: start; }
+.about-grid {
+  display: grid; grid-template-columns: 240px 1.2fr 1fr; gap: 40px; align-items: start;
+  grid-template-areas: "photo text spec";
+}
+.about-grid .portrait { grid-area: photo; width: 240px; }
+.about-grid .spec { grid-area: spec; }
+.about-grid .about-text { grid-area: text; }
+
+.portrait { position: relative; padding: 10px; border: 1px solid var(--line); background: rgba(10, 47, 82, .45); }
+.portrait .reg { width: 14px; height: 14px; border-color: var(--accent); }
+.portrait .reg.tl { top: -6px; left: -6px; }
+.portrait .reg.tr { top: -6px; right: -6px; }
+.portrait .reg.bl { bottom: -6px; left: -6px; }
+.portrait .reg.br { bottom: -6px; right: -6px; }
+.portrait img {
+  display: block; width: 100%; height: auto; aspect-ratio: 540 / 690; object-fit: cover;
+  filter: grayscale(.25) contrast(1.05); transition: filter .3s;
+}
+.portrait:hover img { filter: none; }
+.portrait figcaption { font-family: var(--mono); font-size: 10px; color: var(--accent); letter-spacing: .1em; margin-top: 8px; }
+
+@media (max-width: 1000px) {
+  .about-grid { grid-template-columns: 240px 1fr; grid-template-areas: "photo text" "spec spec"; }
+}
 .about-text p { color: var(--ink-soft); font-size: 17px; }
 .about-text p + p { margin-top: 16px; }
 
@@ -246,6 +269,8 @@ table { width: 100%; border-collapse: collapse; font-size: 14px; }
 @media (max-width: 860px) {
   .hero { grid-template-columns: 1fr; padding: 56px 16px; min-height: auto; }
   .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+  .about-grid { grid-template-areas: "photo" "text" "spec"; }
+  .about-grid .portrait { max-width: 240px; width: 100%; }
   .title-block { grid-template-columns: 1fr 1fr; }
   .title-block div { border-left: 0; border-top: 1px solid var(--line); }
   .title-block div:first-child { grid-column: 1 / -1; border-top: 0; }
