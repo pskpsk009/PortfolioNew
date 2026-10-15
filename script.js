@@ -50,3 +50,9 @@ document.getElementById('contactForm').addEventListener('submit', e => {
   const body = encodeURIComponent(data.get('message') + '\n\n— ' + data.get('name') + ' (' + data.get('email') + ')');
   window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
 });
+
+// Clicking a project card opens its PDF document (links inside the card still work as normal)
+document.querySelectorAll('.part[data-doc]').forEach(card => card.addEventListener('click', e => {
+  if (e.target.closest('a')) return;
+  window.location.href = card.dataset.doc;
+}));

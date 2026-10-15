@@ -288,3 +288,40 @@ table { width: 100%; border-collapse: collapse; font-size: 14px; }
   .menu-btn[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
   .menu-btn[aria-expanded="true"] span:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
 }
+
+/* ============ PDF VIEWER ============ */
+.viewer-nav a {
+  font-family: var(--mono); font-size: 13px; text-decoration: none;
+  text-transform: uppercase; letter-spacing: .08em; color: var(--ink-soft);
+  border-bottom: 1px dashed transparent; transition: .2s;
+}
+.viewer-nav a:hover { color: #fff; border-bottom-color: var(--accent); }
+
+.viewer { padding-top: 56px; }
+.viewer-meta { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
+.viewer-tools { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn.disabled { opacity: .35; pointer-events: none; }
+
+.viewer-frame { position: relative; margin-top: 32px; padding: 12px; border: 1px solid var(--line); background: rgba(10, 47, 82, .45); }
+.viewer-frame .reg { width: 14px; height: 14px; border-color: var(--accent); }
+.viewer-frame .reg.tl { top: -6px; left: -6px; }
+.viewer-frame .reg.tr { top: -6px; right: -6px; }
+.viewer-frame .reg.bl { bottom: -6px; left: -6px; }
+.viewer-frame .reg.br { bottom: -6px; right: -6px; }
+.viewer-bar {
+  display: flex; justify-content: space-between; gap: 12px; padding: 0 2px 10px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: .1em; color: var(--accent);
+  border-bottom: 1px solid var(--line-soft); margin-bottom: 12px; word-break: break-all;
+}
+.viewer-body { height: min(80vh, 1000px); min-height: 420px; }
+.viewer-body iframe { width: 100%; height: 100%; border: 1px solid var(--line-soft); background: #fff; }
+.viewer-empty {
+  height: 100%; display: grid; place-content: center; justify-items: center; gap: 10px; text-align: center;
+  border: 1px dashed var(--line); color: var(--ink-soft); padding: 24px;
+}
+.viewer-empty .part-fig { width: 140px; height: auto; border: 0; margin: 0; }
+.viewer-frame figcaption { font-family: var(--mono); font-size: 10px; color: var(--accent); letter-spacing: .1em; margin-top: 10px; }
+.viewer-pager { display: flex; justify-content: space-between; margin-top: 32px; }
+
+/* Project cards open their document */
+.part[data-doc] { cursor: pointer; }

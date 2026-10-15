@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Project Document · Paing Soe Khant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ============ HEADER ============ -->
+    <header class="topbar">
+      <a href="index.html" class="logo">
+        <span class="logo-box">PSK</span>
+        <span class="logo-meta">DWG NO. PSK-2027<br />REV 1.0</span>
+      </a>
+      <nav class="viewer-nav">
+        <a href="index.html#projects">← Back to projects</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="sheet viewer">
+        <header class="sheet-head">
+          <p class="sheet-label" id="docRef">SHEET 03</p>
+          <h2 id="docTitle">Project document</h2>
+        </header>
+
+        <div class="viewer-meta">
+          <p class="lead" id="docSummary"></p>
+          <div class="viewer-tools">
+            <a class="btn" id="openBtn" target="_blank" rel="noopener">Open ↗</a>
+            <a class="btn btn-solid" id="downloadBtn" download>Download PDF</a>
+          </div>
+        </div>
+        <ul class="tags" id="docTags"></ul>
+
+        <figure class="viewer-frame">
+          <span class="reg tl"></span><span class="reg tr"></span
+          ><span class="reg bl"></span><span class="reg br"></span>
+          <div class="viewer-bar">
+            <span id="docFile">—</span>
+            <span id="docStatus">LOADING…</span>
+          </div>
+          <div class="viewer-body">
+            <iframe id="pdfFrame" title="Project PDF" hidden></iframe>
+            <div class="viewer-empty" id="emptyState" hidden>
+              <svg viewBox="0 0 120 90" class="part-fig" aria-hidden="true">
+                <path d="M30 6 H78 L96 24 V84 H30 Z" class="draw" />
+                <path d="M78 6 V24 H96" class="draw" />
+                <line x1="40" y1="40" x2="86" y2="40" class="link dashed" />
+                <line x1="40" y1="52" x2="86" y2="52" class="link dashed" />
+                <line x1="40" y1="64" x2="70" y2="64" class="link dashed" />
+                <text x="63" y="78" class="t-note">PDF</text>
+              </svg>
+              <p class="sheet-label">DOCUMENT PENDING</p>
+              <p>The PDF for this project hasn't been attached yet. Check back soon.</p>
+            </div>
+          </div>
+          <figcaption id="docCaption">FIG. 3 · PROJECT DOCUMENT</figcaption>
+        </figure>
+
+        <div class="viewer-pager">
+          <a id="prevLink" class="btn">← Prev</a>
+          <a id="nextLink" class="btn">Next →</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="title-block">
+      <div><span>PROJECT</span><b id="tbProject">—</b></div>
+      <div><span>DRAWN BY</span>Paing Soe Khant</div>
+      <div><span>DATE</span><time id="year"></time></div>
+      <div><span>SCALE</span>1:1</div>
+      <div><span>SHEET</span><b id="tbSheet">03</b></div>
+    </footer>
+
+    <script src="viewer.js"></script>
+  </body>
+</html>
