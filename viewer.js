@@ -48,10 +48,48 @@ link($('prevLink'), PROJECTS[(index - 1 + PROJECTS.length) % PROJECTS.length]);
 link($('nextLink'), PROJECTS[(index + 1) % PROJECTS.length]);
 
 function showPdf() {
-  $('pdfFrame').src = pdf;
-  $('pdfFrame').hidden = false;
   $('openBtn').href = pdf;
   $('downloadBtn').href = pdf;
+  if (!window.pdfjsLib) return showInFrame();
+  pdfjsLib.GlobalWorkerOptions.workerSrc =
+    'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  pdfjsLib.getDocument(pdf).promise
+    .then(doc => {
+      $('pdfPages').hidden = false;
+      $('docStatus').textContent = `${doc.numPages} PAGES`;
+      renderPages(doc);
+      let timer;
+      window.addEventListener('resize', () => {
+        clearTimeout(timer);
+        timer = setTimeout(() => renderPages(doc), 250);
+      });
+    })
+    .catch(showInFrame);
+}
+
+// Draw every page as a canvas sized to the viewer width (sharp on high-DPI screens)
+async function renderPages(doc) {
+  const container = $('pdfPages');
+  const width = container.clientWidth - 6;
+  const dpr = window.devicePixelRatio || 1;
+  const canvases = [];
+  for (let n = 1; n <= doc.numPages; n++) {
+    const page = await doc.getPage(n);
+    const viewport = page.getViewport({ scale: (width / page.getViewport({ scale: 1 }).width) * dpr });
+    const canvas = document.createElement('canvas');
+    canvas.width = viewport.width;
+    canvas.height = viewport.height;
+    canvas.setAttribute('aria-label', `Page ${n}`);
+    await page.render({ canvasContext: canvas.getContext('2d'), viewport }).promise;
+    canvases.push(canvas);
+  }
+  container.replaceChildren(...canvases);
+}
+
+// Fallback: let the browser's built-in viewer show it
+function showInFrame() {
+  $('pdfFrame').src = pdf;
+  $('pdfFrame').hidden = false;
   $('docStatus').textContent = 'ATTACHED';
 }
 

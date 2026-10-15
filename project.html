@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=2" />
   </head>
   <body>
     <!-- ============ HEADER ============ -->
@@ -48,6 +48,7 @@
             <span id="docStatus">LOADING…</span>
           </div>
           <div class="viewer-body">
+            <div class="viewer-pages" id="pdfPages" hidden></div>
             <iframe id="pdfFrame" title="Project PDF" hidden></iframe>
             <div class="viewer-empty" id="emptyState" hidden>
               <svg viewBox="0 0 120 90" class="part-fig" aria-hidden="true">
@@ -80,6 +81,7 @@
       <div><span>SHEET</span><b id="tbSheet">03</b></div>
     </footer>
 
-    <script src="viewer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="viewer.js?v=2"></script>
   </body>
 </html>
