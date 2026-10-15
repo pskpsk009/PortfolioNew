@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Project Screens · Paing Soe Khant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=3" />
+  </head>
+  <body>
+    <!-- ============ HEADER ============ -->
+    <header class="topbar">
+      <a href="index.html" class="logo">
+        <span class="logo-box">PSK</span>
+        <span class="logo-meta">DWG NO. PSK-2027<br />REV 1.0</span>
+      </a>
+      <nav class="viewer-nav">
+        <a href="index.html#projects">← Back to projects</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="sheet viewer">
+        <header class="sheet-head">
+          <p class="sheet-label" id="docRef">SHEET 03</p>
+          <h2 id="docTitle">Project screens</h2>
+        </header>
+
+        <div class="viewer-meta">
+          <p class="lead" id="docSummary"></p>
+          <div class="viewer-tools">
+            <a class="btn btn-solid" id="docBtn">View Document</a>
+          </div>
+        </div>
+        <ul class="tags" id="docTags"></ul>
+
+        <div id="gallery"></div>
+
+        <div class="viewer-pager">
+          <a id="prevLink" class="btn">← Prev</a>
+          <a id="nextLink" class="btn">Next →</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="title-block">
+      <div><span>PROJECT</span><b id="tbProject">—</b></div>
+      <div><span>DRAWN BY</span>Paing Soe Khant</div>
+      <div><span>DATE</span><time id="year"></time></div>
+      <div><span>SCALE</span>1:1</div>
+      <div><span>SHEET</span><b id="tbSheet">03</b></div>
+    </footer>
+
+    <!-- Full-size view -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot" hidden>
+      <div class="lightbox-bar">
+        <span id="lbCount"></span>
+        <button class="btn" id="lbClose" aria-label="Close">Close ✕</button>
+      </div>
+      <button class="lightbox-nav prev" id="lbPrev" aria-label="Previous screenshot">←</button>
+      <figure>
+        <img id="lbImg" alt="" />
+        <figcaption id="lbCaption"></figcaption>
+      </figure>
+      <button class="lightbox-nav next" id="lbNext" aria-label="Next screenshot">→</button>
+    </div>
+
+    <script src="projects.js?v=3"></script>
+    <script src="gallery.js?v=3"></script>
+  </body>
+</html>
